@@ -7,24 +7,24 @@
 
 	function searchArray(array) {
 
-		var firstPart = array.slice(),
-			secondPart = array.slice(),
+		var firstHalf = array.slice(),
+			secondHalf = array.slice(),
 			arrayLength = array.length;
 
 		if (arrayLength > 1) {
-			firstPart = firstPart.splice(0, Math.ceil(arrayLength/2));
-			secondPart = secondPart.splice(Math.ceil(arrayLength/2), arrayLength-1);
+			firstHalf = firstHalf.splice(0, Math.ceil(arrayLength/2));
+			secondHalf = secondHalf.splice(Math.ceil(arrayLength/2), arrayLength-1);
 
 
-			console.log("The first half is " + firstPart);
-			console.log("The second half is " + secondPart);
+			console.log("The first half is " + firstHalf);
+			console.log("The second half is " + secondHalf);
 
-			if (firstPart.indexOf(requiredNumber) > -1) {
+			if (firstHalf.indexOf(requiredNumber) > -1) {
 				// it must be in this numbers
-				searchArray(firstPart);
-			} else if (secondPart.indexOf(requiredNumber) > -1) {
+				searchArray(firstHalf);
+			} else if (secondHalf.indexOf(requiredNumber) > -1) {
 				// it must be in this numbers
-				searchArray(secondPart);
+				searchArray(secondHalf);
 			} else {
 				console.log('something went wrong');
 			}
